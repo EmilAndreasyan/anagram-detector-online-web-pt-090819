@@ -1,6 +1,6 @@
 # Your code goes here!
 class Anagram
-  attr_accessor :match, :anagram, :word
+  attr_accessor :match, :anagram, :word, :array
   def initialize(word)
     @word = word
   end
@@ -8,7 +8,7 @@ class Anagram
   def match(words)
     @anagram = []
     words.each do |el|
-    if @word.split("") == el.split("")
+    if el.split(//).sort == @word.to_s.split(//).sort
     @anagram << el
     end
     end
